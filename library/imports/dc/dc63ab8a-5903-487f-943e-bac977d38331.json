@@ -1,0 +1,42 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "hero-run",
+  "_objFlags": 0,
+  "_duration": 0.5,
+  "sample": 10,
+  "speed": 1.2,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "95c29f8e-620e-4338-8be5-61a9813b6052"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "360d7d8c-4826-45e3-b2e5-25bbb97fb1a4"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "df1aecca-4edb-41b4-b762-cd613ef33e08"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "64f0466b-e81d-44b5-a427-d9f20bdae44f"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

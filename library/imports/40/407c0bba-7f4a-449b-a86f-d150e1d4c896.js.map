@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": "AAAA,EAAE,CAAC,KAAK,CAAC;AACL,eAAS,EAAE,CAAC,SAAS;;AAErB,cAAU,EAAE,EACX;;;AAGD,UAAM,EAAE,kBAAY;AAChB,YAAI,CAAC,KAAK,GAAG,CAAC,CAAC;KAClB;;AAED,sBAAkB,EAAC,8BAAG;AAClB,YAAI,CAAC,IAAI,CAAC,MAAM,GAAG,UAAU,GAAG,IAAI,CAAC,KAAK,CAAC,QAAQ,EAAE,CAAC;KAEzD;;CAMJ,CAAC,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "cc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n    },\r\n\r\n    // use this for initialization\r\n    onLoad: function () {\r\n        this.score = 0;\r\n    },\r\n    \r\n    updateScoreDisplay () {\r\n        this.node.string = 'String: ' + this.score.toString();\r\n        \r\n    },\r\n\r\n    // called every frame, uncomment this function to activate update callback\r\n    // update: function (dt) {\r\n\r\n    // },\r\n});\r\n"
+  ]
+}

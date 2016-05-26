@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": ";AACA,EAAE,CAAC,KAAK,CAAC;AACL,eAAS,EAAE,CAAC,SAAS;;AAErB,cAAU,EAAE,EAEX;;AAED,UAAM,EAAE,kBAAY,EAEnB;;AAED,QAAI,EAAE,gBAAU;AACZ,YAAI,CAAC,IAAI,CAAC,WAAW,CAAC,IAAI,EAAC,CAAC,CAAC,CAAC;KACjC;;AAED,QAAI,EAAE,gBAAU;AACZ,YAAI,CAAC,IAAI,CAAC,WAAW,CAAC,CAAC,EAAC,CAAC,CAAC,CAAC;KAC9B;;AAED,QAAI,EAAE,cAAS,IAAI,EAAC;AAChB,YAAI,CAAC,IAAI,GAAG,IAAI,CAAC;KACpB;CACJ,CAAC,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "\r\ncc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n        \r\n    },\r\n\r\n    onLoad: function () {\r\n        \r\n    },\r\n    \r\n    hide: function(){\r\n        this.node.setPosition(2000,0);\r\n    },\r\n    \r\n    show: function(){\r\n        this.node.setPosition(0,0);\r\n    },\r\n\r\n    init: function(game){\r\n        this.game = game;\r\n    },\r\n});\r\n"
+  ]
+}

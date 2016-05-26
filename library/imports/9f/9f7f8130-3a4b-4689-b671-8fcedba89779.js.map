@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": "AAAA,EAAE,CAAC,KAAK,CAAC;AACL,eAAS,EAAE,CAAC,SAAS;;AAErB,cAAU,EAAE;AACR,iBAAS,EAAC,EAAE,CAAC,IAAI;AACjB,gBAAQ,EAAC,EAAE,CAAC,IAAI;AAChB,cAAM,EAAC,EAAE,CAAC,IAAI;;KAEjB;;;AAGD,UAAM,EAAE,kBAAY;;AAEhB,UAAE,CAAC,QAAQ,CAAC,eAAe,CAAC,IAAI,CAAC,CAAC;;AAElC,YAAI,IAAI,GAAG,IAAI,CAAC,IAAI,CAAC;AACrB,YAAI,CAAC,SAAS,GAAG,IAAI,CAAC,QAAQ,CAAC,YAAY,CAAC,UAAU,CAAC,CAAC;AACxD,YAAI,CAAC,SAAS,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;;AAG1B,YAAI,CAAC,UAAU,GAAG,IAAI,CAAC,SAAS,CAAC,YAAY,CAAC,WAAW,CAAC,CAAC;AAC3D,YAAI,CAAC,UAAU,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;;AAE3B,YAAI,CAAC,MAAM,GAAG,IAAI,CAAC,MAAM,CAAC,YAAY,CAAC,QAAQ,CAAC,CAAC;AACjD,YAAI,CAAC,MAAM,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;;AAIvB,UAAE,CAAC,GAAG,CAAC,uBAAuB,CAAC,CAAC;KACnC;;AAED,WAAO,EAAC,mBAAG;AACP,UAAE,CAAC,QAAQ,CAAC,SAAS,CAAC,UAAU,CAAC,CAAC;AAClC,UAAE,CAAC,QAAQ,CAAC,MAAM,EAAE,CAAC;KACxB;;AAED,YAAQ,EAAC,oBAAG;AACR,YAAI,CAAC,UAAU,CAAC,IAAI,EAAE,CAAC;KAC1B;;CAEJ,CAAC,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "cc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n        MenuDeath:cc.Node,\r\n        InGameUI:cc.Node,\r\n        Player:cc.Node,\r\n      \r\n    },\r\n\r\n    // use this for initialization\r\n    onLoad: function () {\r\n\r\n        cc.director.setDisplayStats(true);\r\n\r\n        var game = this.node;\r\n        this.In_gameUI = this.InGameUI.getComponent('InGameUI');\r\n        this.In_gameUI.init(game);\r\n        \r\n         \r\n        this.menu_death = this.MenuDeath.getComponent('MenuDeath');\r\n        this.menu_death.init(game);\r\n        \r\n        this.player = this.Player.getComponent('Player');\r\n        this.player.init(game);\r\n        \r\n        \r\n        \r\n        cc.log(\"onLoad Game complete!\");\r\n    },\r\n    \r\n    reStart () {\r\n        cc.director.loadScene('playGame');\r\n        cc.director.resume();\r\n    },\r\n   \r\n    gameOver () {\r\n        this.menu_death.show();\r\n    },\r\n    \r\n});\r\n"
+  ]
+}

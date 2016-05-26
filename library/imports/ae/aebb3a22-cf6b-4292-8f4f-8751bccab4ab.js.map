@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": "AAAA,IAAM,QAAQ,GAAG,OAAO,CAAE,UAAU,CAAC,CAAC;AACtC,EAAE,CAAC,KAAK,CAAC;AACL,eAAS,EAAE,CAAC,SAAS;;AAErB,cAAU,EAAE;AACR,iBAAS,EAAC;AACN,uBAAS,EAAE;AACX,gBAAI,EAAC,QAAQ;SAChB;KACJ;;;AAGD,UAAM,EAAE,kBAAY,EAEnB;;AAED,QAAI,EAAC,gBAAG;AACJ,aAAI,IAAI,CAAC,GAAE,CAAC,EAAE,CAAC,GAAG,IAAI,CAAC,SAAS,CAAC,MAAM,EAAE,EAAE,CAAC,EAAC;AACzC,gBAAI,CAAC,SAAS,CAAC,CAAC,CAAC,CAAC,IAAI,EAAE,CAAC;SAC5B;KACJ;;AAED,eAAW,EAAC,uBAAG;AACX,YAAI,OAAO,GAAG,IAAI,CAAC,SAAS,CAAC;AAC7B,YAAG,OAAO,CAAC,KAAK,IAAI,CAAC,EAAE;AACnB,mBAAO,CAAC,OAAO,EAAE,CAAC;SACrB,MAAM;AACH,mBAAO,IAAI,CAAC;SACf;KACJ;;AAED,cAAU,EAAC,oBAAC,GAAG,EAAE;AACb,YAAI,OAAO,GAAG,IAAI,CAAC,SAAS,CAAC;AAC7B,YAAG,OAAO,CAAC,KAAK,GAAG,OAAO,CAAC,IAAI,EAAE;AAC7B,mBAAO,UAAO,CAAC,GAAG,CAAC,CAAC;SACvB,MAAM;AACH,cAAE,CAAC,GAAG,CAAC,qDAAqD,CAAC,CAAC;AAC9D,mBAAO,IAAI,CAAC;SACf;KACJ;CACJ,CAAC,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "const NodePool = require ('NodePool');\r\ncc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n        starPools:{\r\n            default: [],\r\n            type:NodePool\r\n        },\r\n    },\r\n\r\n    // use this for initialization\r\n    onLoad: function () {\r\n\r\n    },\r\n\r\n    init () {\r\n        for(let i =0; i < this.starPools.length; ++i){\r\n            this.starPools[i].init();\r\n        }\r\n    },\r\n    \r\n    requireStar () {\r\n        let thePool = this.starPools;\r\n        if(thePool.index >= 0 ){\r\n            thePool.request();\r\n        } else {\r\n            return null;\r\n        }\r\n    },\r\n    \r\n    returnStar (obj) {\r\n        let thePool = this.starPools;\r\n        if(thePool.index < thePool.size ){\r\n            thePool.return(obj);\r\n        } else {\r\n            cc.log('Return obj to a full pool, something has gone wrong');\r\n            return null;\r\n        }\r\n    },\r\n});\r\n"
+  ]
+}

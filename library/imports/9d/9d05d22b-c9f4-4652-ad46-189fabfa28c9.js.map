@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": "AAAA,EAAE,CAAC,KAAK,CAAC;AACL,eAAS,EAAE,CAAC,SAAS;;AAErB,cAAU,EAAE;AACR,kBAAU,EAAC,EAAE,CAAC,KAAK;AACnB,oBAAY,EAAC,EAAE,CAAC,KAAK;KACxB;;AAED,QAAI,EAAE,cAAS,IAAI,EAAC;AAChB,YAAI,CAAC,IAAI,GAAG,IAAI,CAAC;KACpB;;AAED,QAAI,EAAE,gBAAU;AACZ,YAAI,CAAC,IAAI,CAAC,WAAW,CAAC,IAAI,EAAC,CAAC,CAAC,CAAC;KACjC;;AAED,QAAI,EAAE,gBAAU;AACZ,YAAI,CAAC,IAAI,CAAC,WAAW,CAAC,CAAC,EAAC,CAAC,CAAC,CAAC;AAC3B,YAAI,CAAC,KAAK,EAAE,CAAC;KAChB;;AAED,SAAK,EAAE,iBAAW;AACZ,YAAI,CAAC,YAAY,CAAC,MAAM,GAAG,IAAI,CAAC,UAAU,CAAC,MAAM,GAAE,SAAS,CAAC;KAClE;;AAED,UAAM,EAAE,kBAAY,EAEnB;;CAGJ,CAAC,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "cc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n        scoreFinal:cc.Label,\r\n        scoreDisplay:cc.Label,\r\n    },\r\n    \r\n    init: function(game){\r\n        this.game = game;\r\n    },\r\n    \r\n    hide: function(){\r\n        this.node.setPosition(1000,0);\r\n    },\r\n    \r\n    show: function(){\r\n        this.node.setPosition(0,0);\r\n        this.score();\r\n    },\r\n    \r\n    score: function() {\r\n          this.scoreDisplay.string = this.scoreFinal.string -'Score: ';\r\n    },\r\n    // use this for initialization\r\n    onLoad: function () {\r\n        \r\n    },\r\n\r\n    \r\n});\r\n"
+  ]
+}
