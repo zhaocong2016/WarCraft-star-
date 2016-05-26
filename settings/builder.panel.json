@@ -1,0 +1,13 @@
+{
+  "excludeScenes": [],
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.game",
+  "startScene": "b272975a-29a7-425b-84e0-e88f6fb4d85e",
+  "title": "game",
+  "webOrientation": "auto"
+}

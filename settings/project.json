@@ -1,0 +1,47 @@
+{
+  "collision-matrix": [
+    [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      true,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
+      false,
+      false
+    ]
+  ],
+  "group-list": [
+    "default",
+    "star",
+    "floor",
+    "player",
+    "wall"
+  ],
+  "start-scene": "b272975a-29a7-425b-84e0-e88f6fb4d85e"
+}
