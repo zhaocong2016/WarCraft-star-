@@ -162,9 +162,9 @@ cc.Class({
         this.node.x +=this.xspeed*dt;
         if(this.jumping){
             this.node.y += this.yspeed * dt;
-            if(this.node.getPositionY() < -283){
+            if(this.node.getPositionY() < 36){
                 this.yspeed = 0;
-                this.node.setPositionY(-282);
+                this.node.setPositionY(37);
                 this.jumping = false;
             }
         }
@@ -174,20 +174,20 @@ cc.Class({
             //console.log('moving!')
         
         //如果超过屏幕边界      
-        if(this.node.x > 545){
+        if(this.node.x > 1022){
             //控制台信息
             //console.log('over the line(right)');
             //停止奔跑动画
             //this.animate.pause('hero-run');
             //重定位位置
-            this.node.x = -541;
+            this.node.x = -54;
             //重设初速度为0
             //this.xspeed = 0;
         }
-        else if(this.node.x < -541){
+        else if(this.node.x < -54){
            //console.log('over the line(left)');
            //this.animate.pause('hero-run');
-           this.node.x = 545;   
+           this.node.x = 1022;   
            //this.xspeed = 0;
         }
     },
