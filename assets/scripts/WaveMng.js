@@ -9,7 +9,7 @@ cc.Class({
         star3: cc.Prefab,
         player:cc.Node, 
         score: cc.Label,
-        spawnInterval:1,
+        spawnInterval:2,
     },
 
     // use this for initialization
@@ -41,10 +41,12 @@ cc.Class({
     
     getNewStarPosition () {
         //cc.log("getNewStarPosition start !");
-        var maxX = this.node.width/2;
+        var maxX = cc.director.getVisibleSize().width;
         //流星出现在随机的X坐标
-        var randX = cc.randomMinus1To1()*maxX;
-        var posY = this.node.height*0.5;
+        var randX = cc.random0To1() * maxX;
+        // cc.log("randx:",randX);
+        var posY = cc.director.getVisibleSize().height;
+        // cc.log("posY:",posY);
         //cc.log("getNewStarPosition complete !");
         return cc.p(randX,posY);
         
