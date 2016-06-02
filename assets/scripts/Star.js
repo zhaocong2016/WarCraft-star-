@@ -66,21 +66,27 @@ cc.Class({
         //WHITE
         if(this.starType == starType.WHITE){
             //屏幕内X坐标的随机值
-            this.randomX = cc.director.getVisibleSize.x * -0.5 * cc.random0To1();
+            this.randomX = cc.director.getVisibleSize().width * cc.random0To1();
+            // cc.log("getVisibleSizeX:",cc.director.getVisibleSize().width);
+            // cc.log("random:",this.randomX);
             
-            vecX_white = this.node.x - this.randomX;
-            vecY_white = this.node.y - cc.director.getVisibleSize.y * - 0.5;
+            vecX_white = this.node.getPositionX() - this.randomX;
+            // cc.log("vecX_white:",vecX_white);
+            
+            vecY_white = this.node.getPositionY();
+            // cc.log("vecY_white:",vecY_white);
             
             ratio_white = vecY_white / vecX_white * 1.0;
+            // cc.log("ratio_white:",ratio_white);
             
-            juge = ratio_white/Math.abs(ratio_white);
+            //juge = ratio_white/Math.abs(ratio_white);
             
             if(Math.abs(ratio_white) > this.maxRatio)
             {
                 //console.log('star\'s speed is too fast ');
                 this.speed = cc.random0To1()*1 + 1;
                 
-                ratio_white = this.maxRatio*juge;
+                ratio_white = this.maxRatio; //* juge;
             }
         }
         
@@ -89,8 +95,8 @@ cc.Class({
             
             var heroPos = this.waveMng.player.getPosition();
             
-            vecX_bule = this.node.x - heroPos.x;
-            vecy_bule = this.node.y - heroPos.y;
+            vecX_bule = this.node.getPositionX() - heroPos.x;
+            vecy_bule = this.node.getPositionY() - heroPos.y;
             
             //ratio是矢量，因为vecX,vecY都是矢量
             ratio_bule = vecy_bule / (vecX_bule * 1.0);
@@ -109,19 +115,19 @@ cc.Class({
         //RED
         if(this.starType == starType.RED){
             //屏幕外X坐标的随机值
-            this.randomX_0 = cc.director.getVisibleSize.x * -1 * 0.5 * cc.random0To1() + 200;   //左
-            this.randomX_1 = cc.director.getVisibleSize.x * 0.5 * cc.random0To1() + cc.director.getVisibleSize.x;   //右
+            this.randomX_0 = cc.director.getVisibleSize().width * -1 * 0.5 * cc.random0To1() ;   //左
+            this.randomX_1 = cc.director.getVisibleSize().width * 0.5 * cc.random0To1() + cc.director.getVisibleSize.x;   //右
             
             //random用来随机流星方向
             var random = cc.random0To1();
             
             if(random > 0.5){
-                vecX_red = this.node.x - this.randomX_0;
+                vecX_red = this.node.getPositionX() - this.randomX_0;
             }
             else{
-                vecX_red = this.node.x - this.randomX_1;
+                vecX_red = this.node.getPositionX() - this.randomX_1;
             }
-            vecY_red = this.node.y - cc.director.getVisibleSize.y * - 0.5;
+            vecY_red = this.node.getPositionY() - cc.director.getVisibleSize.y * - 0.5;
             
             ratio_red = vecY_red / (vecX_red * 1.0);
         }
@@ -137,30 +143,19 @@ cc.Class({
     starAI () {
         //white
         if(this.starType == starType.WHITE){
-            if (vecX_white >= 0 && vecY_white>=0)
+            if (vecX_white >= 0)
             {
                 this.node.x += this.speed * -1;
                 this.node.y += this.speed * ratio_white * -1;
+                // this.node.setPosition(this.node.getPositionX() +  this.speed * -1,
+                //     this.node.getPositionY() + this.speed * ratio_white * -1 );
             }
-            else if(vecX_white >= 0 && vecY_white<0)
-            {
-                this.node.x += this.speed * -1;    
-                this.node.y += this.speed * ratio_white * -1;
-            }
-            else if(vecX_white < 0 && vecY_white<0)
-            {
-                this.node.x += this.speed ;    
-                this.node.y += this.speed * ratio_white;
-            }
-            else if(vecX_white < 0 && vecY_white>=0)
-            { 
-                this.node.x += this.speed ;    
-                this.node.y += this.speed * ratio_white;
-            }
-            else{
-                this.node.x += this.speed ;    
-                this.node.y += this.speed ;
-            }
+            else {
+                this.node.x += this.speed ;
+                this.node.y += this.speed * ratio_white ;
+                // this.node.setPosition(this.node.getPositionX() +  this.speed,
+                //     this.node.getPositionY() + this.speed * ratio_white );
+             }
         }
         //bule
         else if(this.starType == starType.BULE){
@@ -190,7 +185,7 @@ cc.Class({
             }
         }  
         //red
-        else if(this.starType == RED){
+        else if(this.starType == starType.RED){
              if (vecX_bule >= 0 && vecY_bule>=0)
             {
                 this.node.x += this.speed * -1;
@@ -216,14 +211,14 @@ cc.Class({
                 this.node.y += this.speed ;
             }
         }
-        else if(this.starType == PURPLE){
+        else if(this.starType == starType.PURPLE){
             
         }
     },
     
     //流星的状态
     starState () {
-      if(this.node.y < -315 ){
+      if(this.node.getPositionY() < cc.director.getVisibleSize().y){
           starDied = true;
           this.onStarKilled();
       }
